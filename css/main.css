@@ -1,0 +1,54 @@
+@font-face {
+	font-family: 'Itim';
+	src: url('../assets/fonts/Itim-Regular.ttf') format('truetype');
+}
+
+body {
+	display: flex;
+	background-color: #000000;
+}
+
+#Content {
+	position: fixed;
+  	top: 10%;
+  	left: 0;
+  	width: 100%;
+  	text-align: center;
+	font-family: 'Itim';
+	color: #ffffff;
+}
+
+#Content #Message_Top {
+	color: #ffffff;
+}
+
+#Content #Message_Bottom {
+	color: #222222;
+	font-style: italic;
+}
+
+#Content #Countdown_Months {
+	font-size: 1.5em;
+	font-family: 'Courier New';
+}
+
+#Content #Countdown_Days {
+	font-size: 1.5em;
+	font-family: 'Courier New';
+}
+
+#Content #Countdown_Time {
+	font-size: 1.5em;
+	font-family: 'Courier New';
+}
+
+#Content #Image_Waiting {
+	margin: 5%;
+}
+
+.image-gif {
+	width: 100%;
+  	max-width: 400px;
+  	height: auto;
+  	border-radius: 10%;
+}
