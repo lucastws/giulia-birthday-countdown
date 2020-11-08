@@ -1,3 +1,6 @@
+const birthday = "2020-11-14 18:20:00";
+var page_changed = true;
+
 function checkDigit(digit)
 {
 	var result = digit;
@@ -8,7 +11,7 @@ function checkDigit(digit)
 
 function getBirthdayMoment()
 {
-	return moment("2020-11-14 00:00:00");
+	return moment(birthday);
 }
 
 function getTimeNowMoment()
@@ -47,19 +50,26 @@ function _checkBirthday()
 
 	if(date_birthday == date_now)
 	{
-		//wip
+		page_changed = true;
+		$("#Image_Waiting").hide();
+
+		// wip
 	}
 	else
 	{
-		$("#Message_Top").html("Giulia's birthday is in ");
-		$("#Message_Bottom").html("Still a little ways down the road...");
+		if(page_changed == true)
+		{
+			$("#Message_Top").html("Giulia's birthday is in ");
+			$("#Message_Bottom").html("Still a little ways down the road...");
+
+			page_changed = false;
+		}
 
 		updateCountdown();
 	}
-	
 }
 
-$(document).ready(function () 
+$(document).ready(function() 
 {
 	moment.locale();
 
