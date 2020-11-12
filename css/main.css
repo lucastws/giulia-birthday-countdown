@@ -46,9 +46,18 @@ body {
 	margin: 5%;
 }
 
+#Content #Image_Birthday {
+	margin: 5%;
+}
+
+#Content #Div_Audio_Birthday #Audio_Birthday {
+	max-width: 150px;
+	max-height: 20px;
+}
+
 .image-gif {
 	width: 100%;
-  	max-width: 400px;
+  	max-width: 300px;
   	height: auto;
   	border-radius: 10%;
 }

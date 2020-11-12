@@ -6,11 +6,13 @@
 		
 		<link rel="stylesheet" href="./css/normalize.css">
 		<link rel="stylesheet" href="./css/main.css">
+		<link rel="stylesheet" href="./css/balloons.css">
 		
 		<script src="./libraries/jquery-3.5.1.min.js"></script>
 		<script src="./libraries/moment-with-locales.js"></script>
 
 		<script src="./js/main.js"></script>
+		<script src="./js/balloons.js"></script>
 
 		<title>Giulia's Birthday Countdown</title>
 	</head>
@@ -25,8 +27,17 @@
 			<div id="Countdown_Days"></div>
 			<div id="Countdown_Time"></div>
 			<br>
-			<div id="Image_Waiting">
+			<div id="Image_Waiting" hidden>
 				<image class="image-gif" src="./assets/images/waiting-01.gif" />
+			</div>
+			<div id="Image_Birthday" hidden>
+				<image class="image-gif" src="./assets/images/birthday-01.gif" />
+			</div>
+			<div id="Div_Audio_Birthday">
+				<audio controls autoplay id="Audio_Birthday">
+  					<source src="./assets/audios/katy_perry-birthday.mp3" type="audio/mpeg">
+					Your browser does not support the audio element.
+				</audio>
 			</div>
 			<h3 id="Message_Bottom"></h3>
 		</div>

@@ -1,5 +1,11 @@
-const birthday = "2020-11-14 18:20:00";
-var page_changed = true;
+const birthday = "2001-11-12 18:20:00";
+var is_birthday = null;
+
+// Credits: https://stackoverflow.com/a/39466341
+function getOrdinal(n)
+{
+	return["st","nd","rd"][((n+90)%100-10)%10-1]||"th"
+}
 
 function checkDigit(digit)
 {
@@ -9,9 +15,22 @@ function checkDigit(digit)
 	return result;
 }
 
-function getBirthdayMoment()
+function getNextBirthdayMoment()
 {
-	return moment(birthday);
+	let result = moment().format('YYYY') + moment(birthday).format("-MM-DD HH:mm:ss");
+
+	let next_birthday = moment().format('YYYY') + moment(birthday).format("-MM-DD");
+	let now = moment().format("YYYY-MM-DD");
+	if(now > next_birthday) result = moment().add(1, "years").format('YYYY') + moment(birthday).format("-MM-DD HH:mm:ss");
+
+	return moment(result);
+}
+
+function getAge() 
+{
+	var bday = birthday.split(' ')[0];
+
+	return Math.abs(moment(bday).diff(moment(), 'years'));
 }
 
 function getTimeNowMoment()
@@ -21,7 +40,7 @@ function getTimeNowMoment()
 
 function updateCountdown()
 {
-	const moment_birthday = getBirthdayMoment();
+	const moment_birthday = getNextBirthdayMoment();
 	const moment_now = getTimeNowMoment();
 
   	const end = moment_birthday.endOf('seconds');
@@ -45,24 +64,42 @@ function updateCountdown()
 
 function _checkBirthday()
 {
-	const date_birthday = getBirthdayMoment().format("YYYY-MM-DD");
+	const date_birthday = getNextBirthdayMoment().format("YYYY-MM-DD");
 	const date_now = moment().format("YYYY-MM-DD");
 
 	if(date_birthday == date_now)
 	{
-		page_changed = true;
-		$("#Image_Waiting").hide();
+		if(is_birthday == false || is_birthday == null)
+		{
+			balloonsStart();
+			$("#Image_Waiting").hide();
+			$("#Image_Birthday").show();
+			$("#Message_Top").html("Happy " + getAge() + getOrdinal(getAge()) + " birthday, Giulia!");
+			$("#Message_Top").css("color", "fuchsia");
+			$("#Countdown_Months").html("November 14th, 2001");
+			$("#Countdown_Days").html("at 6:20 pm");
+			$("#Countdown_Time").html("(we don't know the seconds exactly.)");
+			$("#Countdown_Time").css("font-size", "0.8em");
+			$("#Countdown_Time").css("color", "#222222");
+			$("#Message_Bottom").html("♥");
 
-		// wip
+			is_birthday = true;
+		}
 	}
 	else
 	{
-		if(page_changed == true)
+		if(is_birthday == true || is_birthday == null)
 		{
+			balloonsStop();
+			$("#Image_Waiting").show();
+			$("#Image_Birthday").hide();
 			$("#Message_Top").html("Giulia's birthday is in ");
+			$("#Message_Top").css("color", "#ffffff");
+			$("#Countdown_Time").css("font-size", "1.5em");
+			$("#Countdown_Time").css("color", "#ffffff");
 			$("#Message_Bottom").html("Still a little ways down the road...");
 
-			page_changed = false;
+			is_birthday = false;
 		}
 
 		updateCountdown();
