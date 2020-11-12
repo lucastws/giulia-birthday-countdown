@@ -74,6 +74,7 @@ function _checkBirthday()
 			balloonsStart();
 			$("#Image_Waiting").hide();
 			$("#Image_Birthday").show();
+			$("#Div_Audio_Birthday").show();
 			$("#Message_Top").html("Happy " + getAge() + getOrdinal(getAge()) + " birthday, Giulia!");
 			$("#Message_Top").css("color", "fuchsia");
 			$("#Countdown_Months").html("November 14th, 2001");
@@ -93,6 +94,7 @@ function _checkBirthday()
 			balloonsStop();
 			$("#Image_Waiting").show();
 			$("#Image_Birthday").hide();
+			$("#Div_Audio_Birthday").hide();
 			$("#Message_Top").html("Giulia's birthday is in ");
 			$("#Message_Top").css("color", "#ffffff");
 			$("#Countdown_Time").css("font-size", "1.5em");
