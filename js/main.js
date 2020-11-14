@@ -95,8 +95,8 @@ function _checkBirthday()
 		{
 			balloonsStop();
 			$("#Image_Waiting").show();
-			//$("#Image_Birthday").hide();
-			//$("#Div_Audio_Birthday").hide();
+			$("#Image_Birthday").hide();
+			$("#Div_Audio_Birthday").hide();
 			$("#Message_Top").html("Giulia's birthday is in ");
 			$("#Message_Top").css("color", "#ffffff");
 			$("#Countdown_Time").css("font-size", "1.5em");
