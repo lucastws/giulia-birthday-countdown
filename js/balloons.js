@@ -107,8 +107,6 @@ function balloonsStart()
             balloonAnimation.onfinish = () => { releaseBalloon(balloon) }
         }
     })();
-    
-    stop();
 }
 
 function balloonsStop()
