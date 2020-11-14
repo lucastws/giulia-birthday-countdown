@@ -1,9 +1,7 @@
-// REMINDER: USE ALL ASSETS FROM URL (AND NOT FROM FILES IN ROOT)
-
 const birthday = "2001-11-14 00:00:00"; // Exact time: 18:20:00
 var is_birthday = null;
 
-// Credits: https://stackoverflow.com/a/39466341
+// Source: https://stackoverflow.com/a/39466341
 function getOrdinal(n)
 {
 	return["st","nd","rd"][((n+90)%100-10)%10-1]||"th"

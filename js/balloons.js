@@ -114,7 +114,6 @@ function balloonsStop()
 	for (let i = 0; i < density; i++) 
     {
         let balloonElement = document.getElementById("Balloon_" + i);
-		
 		if(balloonElement != null) balloonElement.remove();
     }
 }
