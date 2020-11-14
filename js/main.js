@@ -71,7 +71,6 @@ function _checkBirthday()
 	{
 		if(is_birthday == false || is_birthday == null)
 		{
-			document.getElementById("Audio_Birthday").autoplay;
 			balloonsStart();
 			$("#Image_Waiting").hide();
 			$("#Image_Birthday").show();
@@ -92,7 +91,6 @@ function _checkBirthday()
 	{
 		if(is_birthday == true || is_birthday == null)
 		{
-			document.getElementById("Audio_Birthday").stop();
 			balloonsStop();
 			$("#Image_Waiting").show();
 			$("#Image_Birthday").hide();

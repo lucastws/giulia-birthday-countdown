@@ -1,6 +1,6 @@
 // Source: https://github.com/erdoganbavas/web-practices/tree/master/bday-balloons
 
-const density = 15; // concurrent balloon count
+const density = 10; // concurrent balloon count
 const balloons = []; 
 const colors = ['yellow', 'green', 'blue', 'red', 'white', 'black'];
 
